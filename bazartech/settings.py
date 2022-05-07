@@ -12,6 +12,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
+import django_heroku
 from decouple import config
 from dj_database_url import parse as db_url
 
@@ -213,6 +214,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Configure Django App for Heroku.
-# import django_heroku
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
