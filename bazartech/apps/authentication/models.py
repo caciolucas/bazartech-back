@@ -88,7 +88,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     DEFAULT_PROFILE_PICTURE_BASE64 = "QmXBdsBBD6cpXuFg9fCWrpQBhLmntHyLwh3EgvPHVP8UxL"
 
-    name = models.CharField(_("User"), max_length=255)
+    name = models.CharField(_("Name"), max_length=255)
     username = models.CharField(_("User"), max_length=255, unique=True)
     phone_number = models.CharField(_("User"), max_length=20, unique=True, null=True, blank=True)
     email = models.EmailField(_("Email"), unique=True, null=True, blank=True)

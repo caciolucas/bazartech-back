@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-06 22:37-0300\n"
+"POT-Creation-Date: 2022-05-07 14:07-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: bazartech/apps/authentication/models.py:14
+#: bazartech/apps/authentication/models.py:91
 #: bazartech/apps/common/models.py:16 bazartech/apps/common/models.py:30
 #: bazartech/apps/store/models.py:30
 msgid "Name"
@@ -72,10 +73,9 @@ msgstr "permissões do usuário"
 msgid "Specific permissions for this user."
 msgstr "Permissões específicas para este usuário."
 
-#: bazartech/apps/authentication/models.py:91
 #: bazartech/apps/authentication/models.py:92
 #: bazartech/apps/authentication/models.py:93
-#: bazartech/apps/authentication/models.py:125
+#: bazartech/apps/authentication/models.py:127
 msgid "User"
 msgstr "Usuário"
 
@@ -96,23 +96,23 @@ msgstr "Data de nascimento"
 msgid "Gender"
 msgstr "Gênero"
 
-#: bazartech/apps/authentication/models.py:104
+#: bazartech/apps/authentication/models.py:105
 msgid "Profile picture"
 msgstr "Foto de perfil"
 
-#: bazartech/apps/authentication/models.py:106
+#: bazartech/apps/authentication/models.py:108
 msgid "Staff"
 msgstr "Equipe"
 
-#: bazartech/apps/authentication/models.py:108
+#: bazartech/apps/authentication/models.py:110
 msgid "Designates whether the user can log into this admin site."
 msgstr "Designa se o usuário pode logar neste site de administração."
 
-#: bazartech/apps/authentication/models.py:111
+#: bazartech/apps/authentication/models.py:113
 msgid "Active"
 msgstr "Ativo"
 
-#: bazartech/apps/authentication/models.py:114
+#: bazartech/apps/authentication/models.py:116
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
@@ -120,11 +120,11 @@ msgstr ""
 "Designa se este usuário deve ser tratado como ativo. Desmarque isto em vez "
 "de excluir contas."
 
-#: bazartech/apps/authentication/models.py:117
+#: bazartech/apps/authentication/models.py:119
 msgid "Registered at"
 msgstr "Registrado em"
 
-#: bazartech/apps/authentication/models.py:126
+#: bazartech/apps/authentication/models.py:128
 msgid "Users"
 msgstr "Usuários"
 
