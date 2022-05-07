@@ -1,0 +1,21 @@
+# note that you can update the `sha` versions in this file automatically with the command
+# `pre-commit autoupdate`
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+        args: [--config=pyproject.toml, .]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.6.3
+    hooks:
+      - id: isort
+        args: [--settings-file=setup.cfg, .]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+      - id: flake8
+        additional_dependencies: [pep8-naming, flake8-isort, flake8-django]
+        args: [--config=.flake8, .]

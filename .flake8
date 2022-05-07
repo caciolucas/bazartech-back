@@ -1,0 +1,4 @@
+[flake8]
+exclude= build,.git,.tox,./tests/.env,*/migrations/*
+ignore=W504,W601,DJ05,DJ01,W503,E731,E203,I004,E722
+max-line-length=119

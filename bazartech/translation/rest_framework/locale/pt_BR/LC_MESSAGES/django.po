@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-06 22:37-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: bazartech/apps/authentication/models.py:14
+#: bazartech/apps/common/models.py:16 bazartech/apps/common/models.py:30
+#: bazartech/apps/store/models.py:30
+msgid "Name"
+msgstr "Nome"
+
+#: bazartech/apps/authentication/models.py:15
+msgid "Codename"
+msgstr "Codinome"
+
+#: bazartech/apps/authentication/models.py:18
+msgid "Permission"
+msgstr "Permissão"
+
+#: bazartech/apps/authentication/models.py:19
+msgid "Permissions"
+msgstr "Permissões"
+
+#: bazartech/apps/authentication/models.py:26
+msgid "name"
+msgstr "nome"
+
+#: bazartech/apps/authentication/models.py:27
+msgid "permissions"
+msgstr "permissões"
+
+#: bazartech/apps/authentication/models.py:31
+msgid "Group"
+msgstr "Grupo"
+
+#: bazartech/apps/authentication/models.py:32
+msgid "Groups"
+msgstr "Grupos"
+
+#: bazartech/apps/authentication/models.py:42
+msgid "groups"
+msgstr "grupos"
+
+#: bazartech/apps/authentication/models.py:45
+msgid ""
+"The groups this user belongs to. A user will get all permissions granted to "
+"each of their groups."
+msgstr ""
+"Os grupos aos quais esse usuário pertence. Um usuário receberá todas as "
+"permissões dadas a cada um de seus grupos."
+
+#: bazartech/apps/authentication/models.py:52
+msgid "user permissions"
+msgstr "permissões do usuário"
+
+#: bazartech/apps/authentication/models.py:54
+msgid "Specific permissions for this user."
+msgstr "Permissões específicas para este usuário."
+
+#: bazartech/apps/authentication/models.py:91
+#: bazartech/apps/authentication/models.py:92
+#: bazartech/apps/authentication/models.py:93
+#: bazartech/apps/authentication/models.py:125
+msgid "User"
+msgstr "Usuário"
+
+#: bazartech/apps/authentication/models.py:94
+msgid "Email"
+msgstr "Email"
+
+#: bazartech/apps/authentication/models.py:100
+#: bazartech/apps/common/models.py:53
+msgid "Address"
+msgstr "Endereço"
+
+#: bazartech/apps/authentication/models.py:102
+msgid "Birthdate"
+msgstr "Data de nascimento"
+
+#: bazartech/apps/authentication/models.py:103
+msgid "Gender"
+msgstr "Gênero"
+
+#: bazartech/apps/authentication/models.py:104
+msgid "Profile picture"
+msgstr "Foto de perfil"
+
+#: bazartech/apps/authentication/models.py:106
+msgid "Staff"
+msgstr "Equipe"
+
+#: bazartech/apps/authentication/models.py:108
+msgid "Designates whether the user can log into this admin site."
+msgstr "Designa se o usuário pode logar neste site de administração."
+
+#: bazartech/apps/authentication/models.py:111
+msgid "Active"
+msgstr "Ativo"
+
+#: bazartech/apps/authentication/models.py:114
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Designa se este usuário deve ser tratado como ativo. Desmarque isto em vez "
+"de excluir contas."
+
+#: bazartech/apps/authentication/models.py:117
+msgid "Registered at"
+msgstr "Registrado em"
+
+#: bazartech/apps/authentication/models.py:126
+msgid "Users"
+msgstr "Usuários"
+
+#: bazartech/apps/common/models.py:8
+msgid "Created at"
+msgstr "Criado em"
+
+#: bazartech/apps/common/models.py:9
+msgid "Updated at"
+msgstr "Atualizado em"
+
+#: bazartech/apps/common/models.py:17 bazartech/apps/common/models.py:38
+msgid "State"
+msgstr "Estado"
+
+#: bazartech/apps/common/models.py:18
+msgid "IBGE code"
+msgstr "Código do IBGE"
+
+#: bazartech/apps/common/models.py:24
+msgid "City"
+msgstr "Cidade"
+
+#: bazartech/apps/common/models.py:25
+msgid "Cities"
+msgstr "Cidades"
+
+#: bazartech/apps/common/models.py:31
+msgid "UF"
+msgstr "UF"
+
+#: bazartech/apps/common/models.py:32
+msgid "UF Code"
+msgstr "Código da UF"
+
+#: bazartech/apps/common/models.py:39
+msgid "States"
+msgstr "Estados"
+
+#: bazartech/apps/common/models.py:43
+msgid "Zip code"
+msgstr "CEP"
+
+#: bazartech/apps/common/models.py:44
+msgid "Street"
+msgstr "Rua"
+
+#: bazartech/apps/common/models.py:45
+msgid "Number"
+msgstr "Número"
+
+#: bazartech/apps/common/models.py:46
+msgid "District"
+msgstr "Bairro"
+
+#: bazartech/apps/common/models.py:54
+msgid "Addresses"
+msgstr "Endereços"
+
+#: bazartech/apps/store/models.py:13
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: bazartech/apps/store/models.py:14 bazartech/apps/store/models.py:32
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: bazartech/apps/store/models.py:26
+msgid "Hidden"
+msgstr "Oculto"
+
+#: bazartech/apps/store/models.py:27
+msgid "Available"
+msgstr "Disponível"
+
+#: bazartech/apps/store/models.py:28
+msgid "Selled"
+msgstr "Vendido"
+
+#: bazartech/apps/store/models.py:31 bazartech/apps/store/models.py:47
+msgid "Description"
+msgstr "Descrição"
+
+#: bazartech/apps/store/models.py:33
+msgid "Price"
+msgstr "Preço"
+
+#: bazartech/apps/store/models.py:34
+msgid "Status"
+msgstr "Status"
+
+#: bazartech/apps/store/models.py:35
+msgid "Owner"
+msgstr "Dono"
+
+#: bazartech/apps/store/models.py:38 bazartech/apps/store/models.py:49
+msgid "Product"
+msgstr "Produto"
+
+#: bazartech/apps/store/models.py:39
+msgid "Products"
+msgstr "Produtos"
+
+#: bazartech/apps/store/models.py:46
+msgid "Image URL"
+msgstr "URL da imagem"
+
+#: bazartech/apps/store/models.py:53
+msgid "Product's image"
+msgstr "Imagem do produto"
+
+#: bazartech/apps/store/models.py:54
+msgid "Product's images"
+msgstr "Imagens dos produtos"
