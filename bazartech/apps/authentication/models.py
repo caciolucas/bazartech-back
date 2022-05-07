@@ -90,7 +90,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     name = models.CharField(_("Name"), max_length=255)
     username = models.CharField(_("User"), max_length=255, unique=True)
-    phone_number = models.CharField(_("User"), max_length=20, unique=True, null=True, blank=True)
+    phone_number = models.CharField(_("Phone Number"), max_length=20, unique=True, null=True, blank=True)
     email = models.EmailField(_("Email"), unique=True, null=True, blank=True)
     address = models.ForeignKey(
         "common.Address",

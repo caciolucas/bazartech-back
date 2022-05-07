@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-07 14:07-0300\n"
+"POT-Creation-Date: 2022-05-07 15:19-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,10 +74,13 @@ msgid "Specific permissions for this user."
 msgstr "Permissões específicas para este usuário."
 
 #: bazartech/apps/authentication/models.py:92
-#: bazartech/apps/authentication/models.py:93
 #: bazartech/apps/authentication/models.py:127
 msgid "User"
 msgstr "Usuário"
+
+#: bazartech/apps/authentication/models.py:93
+msgid "Phone Number"
+msgstr "Número"
 
 #: bazartech/apps/authentication/models.py:94
 msgid "Email"
