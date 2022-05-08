@@ -50,6 +50,7 @@ EXTERNAL_APPS = [
     "rest_framework_simplejwt",
     "django_extensions",
     "drf_yasg",
+    "corsheaders",
 ]
 
 LOCAL_APPS = [
@@ -69,6 +70,8 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -76,7 +79,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "bazartech.urls"
-
+CORS_ALLOW_ALL_ORIGINS = True
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
