@@ -1,8 +1,12 @@
 # from authentication.utils import send_forget_password_email
-from rest_framework.permissions import AllowAny
+from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import action
 
 from authentication.filters import UserFilter
 from authentication.models import User
@@ -18,6 +22,13 @@ class UserViewSet(ModelViewSet):
     search_fields = ["name"]
     filterset_class = UserFilter
     permission_classes = [OwnAccountPermission]
+
+    @action(detail=False, permission_classes=[IsAuthenticated])
+    def me(self, request, *args, **kwargs):
+        User = get_user_model()
+        self.object = get_object_or_404(User, pk=request.user.id)
+        serializer = self.get_serializer(self.object)
+        return Response(serializer.data)
 
 
 class RegisterView(APIView):
