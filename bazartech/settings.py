@@ -120,7 +120,7 @@ DATABASES = {
     "default": config(
         "DATABASE_URL",
         cast=db_url,
-        default="postgres://postgres:postgres@localhost:5432/bazartech",
+        default="postgres://postgres:localhost@localhost:5432/bazartech",
     )
 }
 
