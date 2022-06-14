@@ -33,6 +33,9 @@ class Product(AutoTimestamps):
     price = models.DecimalField(_("Price"), max_digits=7, decimal_places=2)
     status = models.IntegerField(_("Status"), choices=STATUS_CHOICES)
     owner = models.ForeignKey("authentication.User", models.CASCADE, related_name="products", verbose_name=_("Owner"))
+    favorite = models.ManyToManyField(
+        "authentication.User", related_name="favorite_products", verbose_name=_("Favorite")
+    )
 
     class Meta:
         verbose_name = _("Product")
