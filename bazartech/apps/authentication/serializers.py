@@ -8,13 +8,14 @@ from common.serializers import AddressSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
-    address = AddressSerializer()
     permissions_display = serializers.ListField(source="get_all_permissions", read_only=True)
     status_display = serializers.CharField(source="get_status_display", read_only=True)
     favorite_products_display = serializers.SerializerMethodField()
     favorite_products = serializers.ListField(
         write_only=True, allow_empty=True, child=serializers.IntegerField(), required=False
     )
+    username = serializers.CharField(required=False)
+    optional_fields = ["address", "favorite_products", "username"]
 
     class Meta:
         model = User
@@ -46,19 +47,28 @@ class UserSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def create(self, validated_data):
-        address = validated_data.pop("address")
-        password = validated_data.pop("password")
-        address_obj = Address.objects.create(
-            zip_code=address["zip_code"],
-            street=address["street"],
-            number=address["number"],
-            district=address["district"],
-            city=City.objects.get(
-                name__iexact=address["city"]["name"],
-                state__name__iexact=address["city"]["state"]["name"],
-            ),
-        )
-        user = User.objects.create(**validated_data, address=address_obj)
-        user.set_password(password)
-        user.save()
-        return user
+
+        if validated_data.get("address"):
+
+            password = validated_data.pop("password")
+            address = validated_data.pop("address")
+            address_obj = Address.objects.create(
+                zip_code=address["zip_code"],
+                street=address["street"],
+                number=address["number"],
+                district=address["district"],
+                city=City.objects.get(
+                    name__iexact=address["city"]["name"],
+                    state__name__iexact=address["city"]["state"]["name"],
+                ),
+            )
+            user = User.objects.create(**validated_data, address=address_obj)
+            user.set_password(password)
+            user.save()
+            return user
+        else:
+            password = validated_data.pop("password")
+            user = User.objects.create(**validated_data)
+            user.set_password(password)
+            user.save()
+            return user
