@@ -47,6 +47,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     @transaction.atomic()
     def create(self, validated_data):
+        username = validated_data.pop("username", None)
+
+        if username == None:
+            username = validated_data.pop("email")
 
         if validated_data.get("address"):
 
@@ -62,13 +66,13 @@ class UserSerializer(serializers.ModelSerializer):
                     state__name__iexact=address["city"]["state"]["name"],
                 ),
             )
-            user = User.objects.create(**validated_data, address=address_obj)
+            user = User.objects.create(**validated_data, address=address_obj, username=username)
             user.set_password(password)
             user.save()
             return user
         else:
             password = validated_data.pop("password")
-            user = User.objects.create(**validated_data)
+            user = User.objects.create(**validated_data, username=username)
             user.set_password(password)
             user.save()
             return user
