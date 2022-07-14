@@ -28,13 +28,26 @@ class UserSerializer(serializers.ModelSerializer):
     @transaction.atomic()
     def update(self, instance: User, validated_data):
         address_new_data = validated_data.pop("address", None)
-        if address_new_data:
+        if address_new_data and instance.address:
             address_old_data = instance.address
             address_new_data["state"] = address_new_data["city"]["state"]["name"]
             address_new_data["city"] = address_new_data["city"]["name"]
             new_address = AddressSerializer(instance=address_old_data, data=address_new_data)
             if new_address.is_valid():
                 new_address.save()
+        if address_new_data and not instance.address:
+            address_obj = Address.objects.create(
+                zip_code=address_new_data["zip_code"],
+                street=address_new_data["street"],
+                number=address_new_data["number"],
+                district=address_new_data["district"],
+                city=City.objects.get(
+                    name__iexact=address_new_data["city"]["name"],
+                    state__name__iexact=address_new_data["city"]["state"]["name"],
+                ),
+            )
+            instance.address = address_obj
+            instance.save()
         password = validated_data.pop("password", None)
         if password:
             instance.set_password(password)
