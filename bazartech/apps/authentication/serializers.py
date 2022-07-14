@@ -8,6 +8,7 @@ from common.serializers import AddressSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):
+    address = AddressSerializer(required=False)
     permissions_display = serializers.ListField(source="get_all_permissions", read_only=True)
     status_display = serializers.CharField(source="get_status_display", read_only=True)
     favorite_products_display = serializers.SerializerMethodField()
