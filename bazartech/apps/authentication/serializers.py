@@ -64,7 +64,7 @@ class UserSerializer(serializers.ModelSerializer):
         username = validated_data.pop("username", None)
 
         if username == None:
-            username = validated_data.pop("email")
+            username = validated_data.get("email")
 
         if validated_data.get("address"):
 
