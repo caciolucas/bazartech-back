@@ -38,6 +38,7 @@ urlpatterns = [
     path("api/common/", include("common.urls")),
     path("api/auth/", include("authentication.urls")),
     path("api/store/", include("store.urls")),
+    path("api/notifications/", include("notifications.urls")),
 ]
 
 urlpatterns += [

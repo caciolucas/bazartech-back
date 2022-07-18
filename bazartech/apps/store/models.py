@@ -1,7 +1,12 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
+from fcm_django.models import FCMDevice
+from firebase_admin.messaging import Notification, Message
 
 from common.models import AutoTimestamps
+
 
 # Create your models here.
 
@@ -58,3 +63,15 @@ class ProductImage(models.Model):
 
     def __str__(self) -> str:
         return f"{self.product.name} - {self.description}"
+
+
+@receiver(post_save, sender=Product)
+def product_post_save(sender, instance, created, **kwargs):
+    if created:
+        for device in FCMDevice.objects.all():
+            device.send_message(
+                Message(
+                    notification=Notification(title=f"Novo anúncio! {instance.name} por {instance.owner.name}",
+                                              body=f"R$ {instance.price} - {instance.description}")
+                )
+            )

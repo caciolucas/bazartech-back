@@ -15,6 +15,7 @@ from pathlib import Path
 import django_heroku
 from decouple import config
 from dj_database_url import parse as db_url
+from firebase_admin import initialize_app
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,6 +52,7 @@ EXTERNAL_APPS = [
     "django_extensions",
     "drf_yasg",
     "corsheaders",
+    "fcm_django",
 ]
 
 LOCAL_APPS = [
@@ -112,7 +114,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "bazartech.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -123,7 +124,6 @@ DATABASES = {
         default="postgres://postgres:localhost@localhost:5432/bazartech",
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -170,6 +170,30 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "google-credentials.json"
+)
+FIREBASE_APP = initialize_app()
+
+#
+# FCM_DJANGO_SETTINGS = {
+#     # an instance of firebase_admin.App to be used as default for all fcm-django requests
+#     # default: None (the default Firebase app)
+#     "DEFAULT_FIREBASE_APP": None,
+#     # default: _('FCM Django')
+#     "APP_VERBOSE_NAME": "[string for AppConfig's verbose_name]",
+#     # true if you want to have only one active device per registered user at a time
+#     # default: False
+#     "ONE_DEVICE_PER_USER": True / False,
+#     # devices to which notifications cannot be sent,
+#     # are deleted upon receiving error response from FCM
+#     # default: False
+#     "DELETE_INACTIVE_DEVICES": True / False,
+#     # Transform create of an existing Device (based on registration id) into
+#     # an update. See the section
+#     # "Update of device with duplicate registration ID" for more details.
+#     "UPDATE_ON_DUPLICATE_REG_ID": True / False,
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -201,7 +225,6 @@ LOCALE_PATHS = [
     os.path.join(PROJECT_ROOT, "translation/rest_framework/locale"),
     os.path.join(PROJECT_ROOT, "translation/rest_framework_filters/locale"),
 ]
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
